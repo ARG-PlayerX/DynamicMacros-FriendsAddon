@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="friendsaddon"
+version="1.0.0"
+displayName="DynamicMacros Friends Addon"
+iconFile="dm_friends.png"
+authors="PlayerX"
+description='''
+A third-party addon for DynamicMacros that integrates Minecraft 26.2 Social & Friends System.
+Provides getFriends(), isFriend(), sendFriendRequest(), acceptFriendRequest(), and onFriendListChange events.
+'''
+
+[[dependencies.friendsaddon]]
+modId="neoforge"
+type="required"
+versionRange="[26.2.0.59,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.friendsaddon]]
+modId="dynamicmacros"
+type="required"
+versionRange="[26.2,)"
+ordering="AFTER"
+side="BOTH"

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "hidePlayer",
+    "signature": "hidePlayer(username: String)",
+    "category": "Friends Addon",
+    "description": "Hides the specified player from your client render view.",
+    "parameters": "username: String — Username of player to hide.",
+    "returns": "None.",
+    "example": "# Hide target player from render view\nhidePlayer(\"Steve\");\necho(\"Player hidden!\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "showPlayer",
+    "signature": "showPlayer(username: String)",
+    "category": "Friends Addon",
+    "description": "Unhides a previously hidden player in your client view.",
+    "parameters": "username: String — Username of player to unhide.",
+    "returns": "None.",
+    "example": "# Unhide target player\nshowPlayer(\"Steve\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "sendFriendRequest",
+    "signature": "sendFriendRequest(username: String)",
+    "category": "Friends Addon",
+    "description": "Sends a friend request to another player username.",
+    "parameters": "username: String — Username of player to invite.",
+    "returns": "None.",
+    "example": "# Send a friend request\nsendFriendRequest(\"Alex\");\nsystemToast(\"Friends\", \"Request sent to Alex!\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "getFriends",
+    "signature": "getFriends(): List",
+    "category": "Friends Addon",
+    "description": "Returns a list of all your accepted friends.",
+    "parameters": "None.",
+    "returns": "List<String> — List of active friend usernames.",
+    "example": "# Log friend count\nlocal count = getFriendCount();\necho(\"Total friends: \" + count);",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "isPremium",
+    "signature": "isPremium(): Boolean",
+    "category": "Friends Addon",
+    "description": "Returns true if the player has Premium addon features active.",
+    "parameters": "None.",
+    "returns": "Boolean — True if premium status active.",
+    "example": "# Check premium status\nlocal active = isPremium();\nif (active) {\n    echo(\"Premium user!\");\n}",
+    "origin": "Friends Addon"
+  }
+]
