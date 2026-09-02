@@ -1,12 +1,112 @@
 [
   {
+    "name": "getFriends",
+    "signature": "getFriends(): List",
+    "category": "Friends Addon",
+    "description": "Returns a list of usernames of all active friends.",
+    "parameters": "None.",
+    "returns": "List<String> \u2014 Active friend usernames.",
+    "example": "local friends = getFriends();\nfor (friend in friends) {\n    echo(\"Friend: \" + friend);\n}",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "isFriend",
+    "signature": "isFriend(username: String): Boolean",
+    "category": "Friends Addon",
+    "description": "Checks if a target player username or UUID is in your friends list.",
+    "parameters": "username: String \u2014 Username or UUID of player.",
+    "returns": "Boolean \u2014 True if friend.",
+    "example": "if (isFriend(\"Steve\")) {\n    echo(\"Steve is your friend!\");\n}",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "getFriendCount",
+    "signature": "getFriendCount(): Number",
+    "category": "Friends Addon",
+    "description": "Returns the total number of accepted friends.",
+    "parameters": "None.",
+    "returns": "Number \u2014 Friend count.",
+    "example": "local count = getFriendCount();\necho(\"Total friends: \" + count);",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "getIncomingRequests",
+    "signature": "getIncomingRequests(): List",
+    "category": "Friends Addon",
+    "description": "Returns a list of usernames of incoming pending friend requests.",
+    "parameters": "None.",
+    "returns": "List<String> \u2014 List of usernames requesting friendship.",
+    "example": "local reqs = getIncomingRequests();\nif (arrayLength(reqs) > 0) {\n    echo(\"Pending request from: \" + reqs[0]);\n}",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "getOutgoingRequests",
+    "signature": "getOutgoingRequests(): List",
+    "category": "Friends Addon",
+    "description": "Returns a list of usernames of outgoing pending friend requests.",
+    "parameters": "None.",
+    "returns": "List<String> \u2014 List of usernames you invited.",
+    "example": "local outgoing = getOutgoingRequests();\necho(\"Pending outgoing: \" + arrayLength(outgoing));",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "sendFriendRequest",
+    "signature": "sendFriendRequest(username: String)",
+    "category": "Friends Addon",
+    "description": "Sends a friend request to another player by username.",
+    "parameters": "username: String \u2014 Username of player to invite.",
+    "returns": "None.",
+    "example": "sendFriendRequest(\"Alex\");\nsystemToast(\"Friends\", \"Request sent to Alex!\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "acceptFriendRequest",
+    "signature": "acceptFriendRequest(username: String)",
+    "category": "Friends Addon",
+    "description": "Accepts an incoming friend request from the specified player.",
+    "parameters": "username: String \u2014 Username of player to accept.",
+    "returns": "None.",
+    "example": "acceptFriendRequest(\"Alex\");\necho(\"Accepted friend request!\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "declineFriendRequest",
+    "signature": "declineFriendRequest(username: String)",
+    "category": "Friends Addon",
+    "description": "Declines an incoming friend request from the specified player.",
+    "parameters": "username: String \u2014 Username of player to decline.",
+    "returns": "None.",
+    "example": "declineFriendRequest(\"Griefer123\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "removeFriend",
+    "signature": "removeFriend(username: String)",
+    "category": "Friends Addon",
+    "description": "Removes a player from your friends list.",
+    "parameters": "username: String \u2014 Username of player to remove.",
+    "returns": "None.",
+    "example": "removeFriend(\"Steve\");\necho(\"Removed Steve from friends.\");",
+    "origin": "Friends Addon"
+  },
+  {
+    "name": "isHidden",
+    "signature": "isHidden(username: String): Boolean",
+    "category": "Friends Addon",
+    "description": "Checks if the specified player is currently hidden from client rendering.",
+    "parameters": "username: String \u2014 Username of player.",
+    "returns": "Boolean \u2014 True if hidden.",
+    "example": "if (isHidden(\"Steve\")) {\n    echo(\"Steve is hidden.\");\n}",
+    "origin": "Friends Addon"
+  },
+  {
     "name": "hidePlayer",
     "signature": "hidePlayer(username: String)",
     "category": "Friends Addon",
     "description": "Hides the specified player from your client render view.",
-    "parameters": "username: String — Username of player to hide.",
+    "parameters": "username: String \u2014 Username of player to hide.",
     "returns": "None.",
-    "example": "# Hide target player from render view\nhidePlayer(\"Steve\");\necho(\"Player hidden!\");",
+    "example": "hidePlayer(\"Steve\");\necho(\"Player hidden!\");",
     "origin": "Friends Addon"
   },
   {
@@ -14,39 +114,19 @@
     "signature": "showPlayer(username: String)",
     "category": "Friends Addon",
     "description": "Unhides a previously hidden player in your client view.",
-    "parameters": "username: String — Username of player to unhide.",
+    "parameters": "username: String \u2014 Username of player to unhide.",
     "returns": "None.",
-    "example": "# Unhide target player\nshowPlayer(\"Steve\");",
-    "origin": "Friends Addon"
-  },
-  {
-    "name": "sendFriendRequest",
-    "signature": "sendFriendRequest(username: String)",
-    "category": "Friends Addon",
-    "description": "Sends a friend request to another player username.",
-    "parameters": "username: String — Username of player to invite.",
-    "returns": "None.",
-    "example": "# Send a friend request\nsendFriendRequest(\"Alex\");\nsystemToast(\"Friends\", \"Request sent to Alex!\");",
-    "origin": "Friends Addon"
-  },
-  {
-    "name": "getFriends",
-    "signature": "getFriends(): List",
-    "category": "Friends Addon",
-    "description": "Returns a list of all your accepted friends.",
-    "parameters": "None.",
-    "returns": "List<String> — List of active friend usernames.",
-    "example": "# Log friend count\nlocal count = getFriendCount();\necho(\"Total friends: \" + count);",
+    "example": "showPlayer(\"Steve\");",
     "origin": "Friends Addon"
   },
   {
     "name": "isPremium",
     "signature": "isPremium(): Boolean",
     "category": "Friends Addon",
-    "description": "Returns true if the player has Premium addon features active.",
+    "description": "Returns true if the player account is an authenticated premium Minecraft account.",
     "parameters": "None.",
-    "returns": "Boolean — True if premium status active.",
-    "example": "# Check premium status\nlocal active = isPremium();\nif (active) {\n    echo(\"Premium user!\");\n}",
+    "returns": "Boolean \u2014 True if premium account active.",
+    "example": "if (isPremium()) {\n    echo(\"Authenticated Premium Minecraft user!\");\n}",
     "origin": "Friends Addon"
   }
 ]
